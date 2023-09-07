@@ -22,12 +22,15 @@ export const Summary = ({active, scrollDown}: {active: number | undefined, scrol
 
     return (
         <div className="relative w-full h-full">
-            <img className={`transition-all absolute w-full z-20 inset-x-0 ${ active === 0 ? "top-10" : "top-0"}`}
+            <div className="bg-none">
+                Pabrik Kuatji
+            </div>
+            <img className={`transition-all absolute w-full -z-10 inset-x-0 ${ active === 0 ? "-bottom-10" : "bottom-0"}`}
             src={SunflowerHills}></img>
-            <img className={`absolute left-0`}
+            <img className={`absolute inset-y-0 left-0 -z-20`}
             ref={cloudLeft}
             src={CloudsLeft}></img>
-            <img className={`absolute right-0`}
+            <img className={`absolute inset--y-0 right-0 -z-20`}
             ref={cloudRight}
             src={CloudsRight}></img>
         </div>

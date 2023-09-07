@@ -4,6 +4,7 @@ import { NavProp } from "./types"
 import { Background } from "../components/background"
 import { Summary } from "./summary"
 import { Interests } from "./interests"
+import { Selected } from "./selected"
 
 const nearestSection = (
     currentPosition: number,
@@ -116,7 +117,9 @@ export const Landing = () => {
             <section id="interests" ref={interestRef} className="w-full h-screen snap-start">
                 <Interests />
             </section>
-            <section id="projects" ref={projectRef} className="w-full h-screen snap-start"></section>
+            <section id="projects" ref={projectRef} className="w-full h-screen snap-start">
+                <Selected />
+            </section>
             <Background active={active} />
         </div>
         

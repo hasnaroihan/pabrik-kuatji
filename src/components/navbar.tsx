@@ -29,7 +29,7 @@ export const Navbar = ({navHeader, active}: {navHeader:NavProp[], active:number 
         <div className="h-screen fixed inset-y-0 right-10 z-50 text-white flex flex-col justify-center items-center gap-5">
             {
                 navHeader.map((settings: NavProp, idx: number) => (
-                    <a className={`w-5 h-5 rounded-full bg-black ${active === idx ? "transition transform scale-150 opacity-100 duration-500": 
+                    <a className={`w-5 h-5 rounded-full bg-sky-900 ${active === idx ? "transition transform scale-150 opacity-100 duration-500": 
                                                         "transition transform scale-100 opacity-50 duration-500"}`}
                     href={`#${settings.id}`}
                     key={`${settings.title}`}>

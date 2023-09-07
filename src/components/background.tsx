@@ -14,7 +14,7 @@ export const Background = ({active}: {active: number | undefined}) => {
     }, [active])
 
     return (
-        <div className={`w-full h-screen fixed inset-0 -z-10 transition-all duration-500 ${
+        <div className={`w-full h-screen fixed inset-0 -z-50 transition-all duration-500 ${
             color
         }`}></div>
     )
