@@ -1,4 +1,4 @@
-import SunflowerHills from "./../../assets/sunflower-hills.png"
+import SunflowerHills from "./../../assets/sunflower-hills-flatten.png"
 import CloudsRight from "./../../assets/clouds-right.png"
 import CloudsLeft from "./../../assets/clouds-left.png"
 import { useEffect, useRef, useState } from "react"
@@ -8,17 +8,17 @@ export const Summary = ({active, scrollDown}: {active: number | undefined, scrol
     const cloudLeft = useRef<HTMLImageElement>(null)
     const cloudRight = useRef<HTMLImageElement>(null)
     
-    useEffect(()=> {
-        var cloudLeftRef:any = cloudLeft.current
-        var cloudRightRef:any = cloudRight.current
+    // useEffect(()=> {
+    //     var cloudLeftRef:any = cloudLeft.current
+    //     var cloudRightRef:any = cloudRight.current
 
-        if (cloudLeftRef && scrollDown < 500) {
-            cloudLeftRef.style.transform = "translate(" + -scrollDown + "px, 0px)"
-        }
-        if (cloudRightRef && scrollDown < 500) {
-            cloudRightRef.style.transform = "translate(" + scrollDown + "px, 0px)"
-        }
-    }, [scrollDown])
+    //     if (cloudLeftRef && scrollDown < 500) {
+    //         cloudLeftRef.style.transform = "translate(" + -scrollDown + "px, 0px)"
+    //     }
+    //     if (cloudRightRef && scrollDown < 500) {
+    //         cloudRightRef.style.transform = "translate(" + scrollDown + "px, 0px)"
+    //     }
+    // }, [scrollDown])
 
     return (
         <div className="relative w-full h-full">
@@ -36,14 +36,14 @@ export const Summary = ({active, scrollDown}: {active: number | undefined, scrol
                     </div>
                 </div>
             </div>
-            <img className={`opacity-100 transition-all absolute w-full -z-10 inset-x-0 ${ active === 0 ? "-bottom-[10vh]" : "bottom-0"}`}
-            src={SunflowerHills}></img>
-            <img className={`absolute inset-y-0 left-0 -z-20`}
+            <img className={`transition-all absolute w-full -z-10 inset-x-0 ${ active === 0 ? "-bottom-[10vh]" : "bottom-0"}`}
+                src={SunflowerHills}></img>
+            {/* <img className={`absolute inset-y-0 left-0 -z-20`}
             ref={cloudLeft}
             src={CloudsLeft}></img>
             <img className={`absolute inset-y-0 right-0 -z-20`}
             ref={cloudRight}
-            src={CloudsRight}></img>
+            src={CloudsRight}></img> */}
         </div>
     )
 }

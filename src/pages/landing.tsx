@@ -120,7 +120,7 @@ export const Landing = () => {
             <section id="projects" ref={projectRef} className="w-full h-screen snap-start">
                 <Selected />
             </section>
-            <Background active={active} />
+            <Background active={active} scrollDown={scrollDown} />
         </div>
         
     )
