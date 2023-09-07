@@ -2,6 +2,8 @@ import { useState,useRef, ChangeEvent, useEffect } from "react"
 import { Navbar } from "../components/navbar"
 import { NavProp } from "./types"
 import { Background } from "../components/background"
+import { Summary } from "./summary"
+import { Interests } from "./interests"
 
 const nearestSection = (
     currentPosition: number,
@@ -63,7 +65,9 @@ export const Landing = () => {
     const summaryRef = useRef<HTMLInputElement>(null)
     const interestRef = useRef<HTMLInputElement>(null)
     const projectRef = useRef<HTMLInputElement>(null)
+
     const [active, setActive] = useState<number | undefined>(0);
+    const [scrollDown, setScrollDown] = useState(0)
 
     const navHeader: NavProp[] = [
         {
@@ -89,14 +93,12 @@ export const Landing = () => {
                 scrollRef.current?.scrollTop??0,
                 navHeader
             )
-            //var idx = nearestIndex(scrollRef.current?.scrollTop??0, navHeader)
             //console.log(scrollRef.current?.scrollTop)
             //console.log(idx)
             setActive(idx)
+            setScrollDown(scrollRef.current?.scrollTop??0)
         }
         
-
-        console.log("akucape")
         scrollRef.current?.addEventListener("scroll", handleScroll)
         return () => {
             scrollRef.current?.removeEventListener("scroll", handleScroll)
@@ -108,8 +110,12 @@ export const Landing = () => {
             className="w-full h-screen overflow-y-scroll overscroll-contain scroll-smooth snap-y snap-mandatory"
             ref={scrollRef}>
             <Navbar navHeader={navHeader} active={active}/>
-            <section id="summary" ref={summaryRef} className="w-full h-screen snap-start"></section>
-            <section id="interests" ref={interestRef} className="w-full h-screen snap-start"></section>
+            <section id="summary" ref={summaryRef} className="relative w-full h-screen snap-start overflow-x-clip">
+                <Summary active={active} scrollDown={scrollDown} />
+            </section>
+            <section id="interests" ref={interestRef} className="w-full h-screen snap-start">
+                <Interests />
+            </section>
             <section id="projects" ref={projectRef} className="w-full h-screen snap-start"></section>
             <Background active={active} />
         </div>
