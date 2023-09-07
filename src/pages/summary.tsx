@@ -22,15 +22,26 @@ export const Summary = ({active, scrollDown}: {active: number | undefined, scrol
 
     return (
         <div className="relative w-full h-full">
-            <div className="bg-none">
-                Pabrik Kuatji
+            <div className="grid grid-cols-2 h-1/2 justify-items-start items-start">
+                <div className="flex flex-col w-1/3 min-w-fit h-full ml-10 bg-white rounded-b-xl justify-end items-center gap-2">
+                    <div className="flex flex-col w-fit text-accent font-mansalva justify-center items-start mx-7">
+                        <p className="text-xl">Pabrik Kuatji by</p>
+                        <p className="text-4xl font-bold">Hasna Roihan</p>
+                    </div>
+                    <div className="w-48 font-medium font-opensans text-sm text-accent">
+                        <p>Fullstack developer, digital artist, and a writer</p>
+                    </div>
+                    <div className="flex bg-accent text-white text-xs w-full p-2 rounded-b-xl justify-center items-center mt-5">
+                        <p className="justify-self-center font-opensans underline">{"more about me >>"}</p>
+                    </div>
+                </div>
             </div>
-            <img className={`transition-all absolute w-full -z-10 inset-x-0 ${ active === 0 ? "-bottom-10" : "bottom-0"}`}
+            <img className={`opacity-100 transition-all absolute w-full -z-10 inset-x-0 ${ active === 0 ? "-bottom-[10vh]" : "bottom-0"}`}
             src={SunflowerHills}></img>
             <img className={`absolute inset-y-0 left-0 -z-20`}
             ref={cloudLeft}
             src={CloudsLeft}></img>
-            <img className={`absolute inset--y-0 right-0 -z-20`}
+            <img className={`absolute inset-y-0 right-0 -z-20`}
             ref={cloudRight}
             src={CloudsRight}></img>
         </div>

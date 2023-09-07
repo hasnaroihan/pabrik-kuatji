@@ -5,7 +5,7 @@ export const Background = ({active}: {active: number | undefined}) => {
 
     useEffect(() => {
         if (active === 0) {
-            setColor("bg-sky-300")
+            setColor("bg-bluesky")
         } else if (active === 1) {
             setColor("bg-sky-200")
         } else {
