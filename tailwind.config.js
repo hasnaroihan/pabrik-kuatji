@@ -11,7 +11,10 @@ module.exports = {
     extend: {
       fontFamily: {
         opensans: ['"Open Sans"'],
-        mansalva: ['"Mansalva"']
+        mansalva: ['"Mansalva"'],
+        patrick: ['"Patrick Hand SC"'],
+        gochi: ['"Gochi Hand"'],
+        plusjakarta: ['"Plus Jakarta Sans"']
       },
       colors: {
         bluesky: {

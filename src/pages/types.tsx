@@ -5,3 +5,8 @@ export type NavProp = {
     ref: RefObject<HTMLInputElement>,
     id: string
 }
+
+export type SkillCard = {
+    id: string | null,
+    desc: string
+}

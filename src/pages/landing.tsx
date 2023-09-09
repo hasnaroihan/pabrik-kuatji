@@ -1,10 +1,10 @@
-import { useState,useRef, ChangeEvent, useEffect } from "react"
+import { useState,useRef, ChangeEvent, useEffect, MouseEvent } from "react"
 import { Navbar } from "../components/navbar"
 import { NavProp } from "./types"
 import { Background } from "../components/background"
 import { Summary } from "./summary"
 import { Interests } from "./interests"
-import { Selected } from "./selected"
+import { Projects } from "./projects"
 
 const nearestSection = (
     currentPosition: number,
@@ -69,6 +69,12 @@ export const Landing = () => {
 
     const [active, setActive] = useState<number | undefined>(0);
     const [scrollDown, setScrollDown] = useState(0)
+    const [isAboutMeShown, setAboutMeShown] = useState(false)
+
+    const handleClickToggle = (event:MouseEvent<HTMLButtonElement>): void => {
+        event.preventDefault()
+        setAboutMeShown(!isAboutMeShown)
+    }
 
     const navHeader: NavProp[] = [
         {
@@ -108,17 +114,17 @@ export const Landing = () => {
 
     return (
         <div 
-            className="w-full h-screen overflow-y-scroll overscroll-contain scroll-smooth snap-y snap-mandatory"
+            className={`w-full h-screen ${isAboutMeShown ? "overflow-hidden" : "overflow-y-scroll overscroll-contain scroll-smooth snap-y snap-mandatory"}`}
             ref={scrollRef}>
             <Navbar navHeader={navHeader} active={active}/>
             <section id="summary" ref={summaryRef} className="relative w-full h-screen snap-start overflow-x-clip">
-                <Summary active={active} scrollDown={scrollDown} />
+                <Summary active={active} isAboutMeShown={isAboutMeShown} handleClickToggle={handleClickToggle}/>
             </section>
             <section id="interests" ref={interestRef} className="w-full h-screen snap-start">
                 <Interests />
             </section>
             <section id="projects" ref={projectRef} className="w-full h-screen snap-start">
-                <Selected />
+                <Projects />
             </section>
             <Background active={active} scrollDown={scrollDown} />
         </div>

@@ -8,7 +8,7 @@ export const Interests = () => {
         <div className="relative w-full h-full">
             <img className="absolute w-3/4 inset-x-0 bottom-0"
             src={HarvestDay}></img>
-
+            
         </div>
     )
 }

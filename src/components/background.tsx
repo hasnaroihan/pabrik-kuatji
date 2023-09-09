@@ -23,10 +23,10 @@ export const Background = ({active, scrollDown}: {active: number | undefined, sc
         var cloudRightRef:any = cloudRight.current
 
         if (cloudLeftRef && scrollDown < 600) {
-            cloudLeftRef.style.transform = "translate(" + -scrollDown + "px, 0px)"
+            cloudLeftRef.style.transform = "translate(" + -scrollDown*1.5 + "px, 0px)"
         }
         if (cloudRightRef && scrollDown < 600) {
-            cloudRightRef.style.transform = "translate(" + scrollDown + "px, 0px)"
+            cloudRightRef.style.transform = "translate(" + scrollDown*1.5 + "px, 0px)"
         }
     }, [scrollDown])
 
