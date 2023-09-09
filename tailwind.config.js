@@ -23,8 +23,12 @@ module.exports = {
         accent: {
           DEFAULT: "#0F6375"
         }
+      },
+      gridColumn: {
+        'span-2': 'span 2 / span 2'
       }
-    }
+    },
+    
   },
   plugins: [
     plugin(function({addUtilities}) {

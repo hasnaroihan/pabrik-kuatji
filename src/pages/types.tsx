@@ -8,5 +8,6 @@ export type NavProp = {
 
 export type SkillCard = {
     id: string | null,
-    desc: string
+    desc: string,
+    span: number
 }

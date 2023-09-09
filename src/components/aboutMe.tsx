@@ -3,9 +3,9 @@ import Profile from "./../../assets/persona.svg"
 export const AboutMe = ({isAboutMeShown}: {isAboutMeShown: boolean}) => {
     
     return (
-        <div className={`fixed z-50 w-full h-3/4 bg-white flex justify-center items-center transition transform duration-400 ${
+        <div className={`fixed z-50 w-full h-3/4 bg-white flex justify-center items-center transition transform duration-400 overflow-hidden ${
             isAboutMeShown ? "ease-in translate-y-4/5" : "ease-out -translate-y-full"}`}>
-            <div className="w-3/4 h-full flex flex-col gap-10 justify-center items-center text-base text-center font-plusjakarta">
+            <div className="w-3/4 h-full flex flex-col gap-10 justify-center items-center text-xs text-center font-plusjakarta xl:text-base">
                 <div className="grid grid-cols-6 justify-items-center items-center">
                     <img className="transform scale-2.5" src={Profile} />
                     <img width="64" height="64" src="https://img.icons8.com/glyph-neue/64/0F6375/right.png" alt="right"/>
