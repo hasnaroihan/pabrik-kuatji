@@ -11,11 +11,11 @@ export const Interests = () => {
         {
             id: "Software Engineering",
             desc: [
-                "HTML, CSS, JS: 7/10",
-                "ReactJS: 7/10",
-                "Python, Django: 8/10",
-                "Go: 6/10",
-                "Java: 6/10"
+                "HTML, CSS, JS - 7/10",
+                "ReactJS - 7/10",
+                "Python, Django - 8/10",
+                "Go - 6/10",
+                "Java - 6/10"
             ],
             position: "origin-top-left"
         },
@@ -39,7 +39,7 @@ export const Interests = () => {
         },
         {
             id: "Writing",
-            desc: ["Blog", "poetry", "short stories"],
+            desc: ["Blog", "Poetry", "Short stories"],
             position: "origin-bottom"
         },
         {

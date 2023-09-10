@@ -68,7 +68,7 @@ export const Landing = () => {
     const interestRef = useRef<HTMLInputElement>(null)
     const projectRef = useRef<HTMLInputElement>(null)
     const projectDetailsRef = useRef<HTMLInputElement>(null)
-    const contactRef = useRef<HTMLInputElement>(null)
+    // const contactRef = useRef<HTMLInputElement>(null)
 
     const [active, setActive] = useState<number | undefined>(0);
     const [scrollDown, setScrollDown] = useState(0)
@@ -109,11 +109,11 @@ export const Landing = () => {
             ref: projectDetailsRef,
             id: "projectdetails"
         },
-        {
-            title: "Contact",
-            ref: contactRef,
-            id: "contact"
-        }
+        // {
+        //     title: "Contact",
+        //     ref: contactRef,
+        //     id: "contact"
+        // }
     ]
 
     useEffect(() => {
@@ -136,7 +136,7 @@ export const Landing = () => {
 
     return (
         <div 
-            className={`w-full h-screen ${isAboutMeShown ? "overflow-hidden" : "overflow-y-scroll overscroll-contain scroll-smooth snap-y snap-mandatory"}`}
+            className={`w-full h-screen ${isAboutMeShown ? "overflow-hidden" : "overflow-y-scroll overscroll-contain scroll-smooth snap-y snap-mandatory no-scrollbar"}`}
             ref={scrollRef}>
             <Navbar navHeader={navHeader} active={active}/>
             <section id="summary" ref={summaryRef} className="relative w-full h-screen snap-start overflow-x-clip">
@@ -151,9 +151,9 @@ export const Landing = () => {
             <section id="projectdetails" ref={projectDetailsRef} className="w-full h-screen snap-start">
                 <ProjectDetails project={projectToggle} setProject={setProjectToggle}/>
             </section>
-            <section id="contact" ref={contactRef} className="w-full h-screen snap-start">
+            {/* <section id="contact" ref={contactRef} className="w-full h-screen snap-start">
                 contact me
-            </section>
+            </section> */}
             <Background active={active} scrollDown={scrollDown} />
         </div>
         
