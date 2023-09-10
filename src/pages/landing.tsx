@@ -5,6 +5,7 @@ import { Background } from "../components/background"
 import { Summary } from "./summary"
 import { Interests } from "./interests"
 import { Projects } from "./projects"
+import { ProjectDetails } from "./projectDetails"
 
 const nearestSection = (
     currentPosition: number,
@@ -29,9 +30,8 @@ const nearestSection = (
         // binary search
         let i = 0, j = end, mid= 0
         while(i<j) {
-            mid = i+j/2
+            mid = Math.floor((i+j)/2)
             target = sectionArray[mid].ref.current?.offsetTop ?? 0
-
             // return if equal to mid value
             if (currentPosition == target) {
                 return mid
@@ -63,17 +63,29 @@ const nearestSection = (
 
 export const Landing = () => {
     const scrollRef = useRef<HTMLInputElement>(null)
+    
     const summaryRef = useRef<HTMLInputElement>(null)
     const interestRef = useRef<HTMLInputElement>(null)
     const projectRef = useRef<HTMLInputElement>(null)
+    const projectDetailsRef = useRef<HTMLInputElement>(null)
+    const contactRef = useRef<HTMLInputElement>(null)
 
     const [active, setActive] = useState<number | undefined>(0);
     const [scrollDown, setScrollDown] = useState(0)
     const [isAboutMeShown, setAboutMeShown] = useState(false)
+    const [projectToggle, setProjectToggle] = useState("it")
 
     const handleClickToggle = (event:MouseEvent<HTMLButtonElement>): void => {
         event.preventDefault()
         setAboutMeShown(!isAboutMeShown)
+    }
+    const handleClickIT = (event:MouseEvent<HTMLAnchorElement>): void => {
+        // event.preventDefault()
+        setProjectToggle("it")
+    }
+    const handleClickGallery = (event:MouseEvent<HTMLAnchorElement>): void => {
+        // event.preventDefault()
+        setProjectToggle("gallery")
     }
 
     const navHeader: NavProp[] = [
@@ -92,6 +104,16 @@ export const Landing = () => {
             ref: projectRef,
             id: "projects"
         },
+        {
+            title: "Project Details",
+            ref: projectDetailsRef,
+            id: "projectdetails"
+        },
+        {
+            title: "Contact",
+            ref: contactRef,
+            id: "contact"
+        }
     ]
 
     useEffect(() => {
@@ -100,8 +122,8 @@ export const Landing = () => {
                 scrollRef.current?.scrollTop??0,
                 navHeader
             )
-            //console.log(scrollRef.current?.scrollTop)
-            //console.log(idx)
+            // console.log(scrollRef.current?.scrollTop)
+            // console.log(idx)
             setActive(idx)
             setScrollDown(scrollRef.current?.scrollTop??0)
         }
@@ -124,7 +146,13 @@ export const Landing = () => {
                 <Interests />
             </section>
             <section id="projects" ref={projectRef} className="w-full h-screen snap-start">
-                <Projects />
+                <Projects handleClickIT={handleClickIT} handleClickGallery={handleClickGallery} />
+            </section>
+            <section id="projectdetails" ref={projectDetailsRef} className="w-full h-screen snap-start">
+                <ProjectDetails project={projectToggle} setProject={setProjectToggle}/>
+            </section>
+            <section id="contact" ref={contactRef} className="w-full h-screen snap-start">
+                contact me
             </section>
             <Background active={active} scrollDown={scrollDown} />
         </div>

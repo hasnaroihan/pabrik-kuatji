@@ -13,8 +13,12 @@ export const Background = ({active, scrollDown}: {active: number | undefined, sc
             setColor("bg-bluesky")
         } else if (active === 1) {
             setColor("bg-sky-200")
-        } else {
+        } else if (active === 2){
             setColor("bg-amber-50")
+        } else if (active === 3){
+            setColor("bg-white")
+        } else {
+            setColor("bg-white")
         }
     }, [active])
 
@@ -22,11 +26,12 @@ export const Background = ({active, scrollDown}: {active: number | undefined, sc
         var cloudLeftRef:any = cloudLeft.current
         var cloudRightRef:any = cloudRight.current
 
-        if (cloudLeftRef && scrollDown < 600) {
-            cloudLeftRef.style.transform = "translate(" + -scrollDown*1.5 + "px, 0px)"
+        if (cloudLeftRef) {
+            cloudLeftRef.style.transform = "translate(" + -scrollDown + "px, 0px)"
         }
-        if (cloudRightRef && scrollDown < 600) {
-            cloudRightRef.style.transform = "translate(" + scrollDown*1.5 + "px, 0px)"
+
+        if (cloudRightRef) {
+            cloudRightRef.style.transform = "translate(" + scrollDown + "px, 0px)"
         }
     }, [scrollDown])
 

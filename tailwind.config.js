@@ -5,7 +5,8 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
     "./public/*.html",
-    "./build/*.html"
+    "./build/*.html",
+    "./*.{js,jsx,ts,tsx}"
   ],
   theme: {
     extend: {
@@ -25,25 +26,21 @@ module.exports = {
         }
       },
       gridColumn: {
-        'span-2': 'span 2 / span 2'
+        'span-2': 'span 2 / span 2',
+        'span-3': 'span 3 / span 3'
       }
     },
     
   },
   plugins: [
     plugin(function({addUtilities}) {
-      
-        addUtilities({
-          ".no-scrollbar::-webkit-scrollbar" : {
-              "display": "none"
-            },
-          ".no-scrollbar": {
-            "-ms-overflow-style": "none",
-            "scrollbar-width": "none"
-            },
-          }
-        )
-        })
+      addUtilities({
+        ".backface-hidden": {
+          "backface-visibility": "hidden",
+          "-webkit-backface-visibility": "hidden",
+        }
+      })
+    })
   ],
 }
 

@@ -1,9 +1,11 @@
-import { useState } from "react"
+import { MouseEventHandler, useEffect, useRef, useState } from "react"
 import Lowest from "./../../assets/selected-projects-lowest.png"
 import IT from "./../../assets/it.png"
 import Drawing from "./../../assets/drawing.png"
 
-export const Projects = () => {
+export const Projects = ({handleClickIT, handleClickGallery}: {
+    handleClickIT: MouseEventHandler<HTMLAnchorElement>,
+    handleClickGallery: MouseEventHandler<HTMLAnchorElement>}) => {
 
     return (
         <div className="relative w-full h-full overflow-y-clip">
@@ -11,8 +13,12 @@ export const Projects = () => {
             <img className="absolute w-full -z-10 inset-x-0 bottom-0"
             src={Lowest}></img>
             <div className="grid grid-cols-2 h-full w-full justify-items-center items-end">
-                <img className="w-1/2 transition transform hover:scale-125"src={IT}></img>
-                <img className="w-2/5 translate-x-5 transition transform hover:scale-125" src={Drawing}></img>
+                <a href="#projectdetails" className="w-1/2 transition transform hover:scale-125" onClick={handleClickIT}>
+                    <img className="block" src={IT}></img>
+                </a>
+                <a className="w-2/5 translate-x-5 transition transform hover:scale-125" onClick={handleClickGallery} href="#projectdetails">
+                    <img className="block" src={Drawing}></img>
+                </a>
             </div>
         </div>
     )

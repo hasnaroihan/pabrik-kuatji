@@ -3,7 +3,7 @@ import { MouseEventHandler } from "react"
 export const AboutMeToggle = ({isToggleShown, handleClickToggle}: {isToggleShown: boolean, handleClickToggle: MouseEventHandler<HTMLButtonElement>}) => {
     return (
         <div className={`flex flex-col w-1/3 min-w-fit h-full max-h-fit min-h-full ml-10 bg-white rounded-b-xl drop-shadow-xl
-            justify-end items-center gap-2 transition transform duration-400 ${
+            justify-end items-center gap-2 transition transform duration-500 ${
             isToggleShown ? "ease-in translate-y-[60%]" : "ease-out translate-y-0"}`}>
             <div className="flex flex-col w-fit text-accent justify-center items-start mx-7">
                 <p className="text-xl font-mansalva">Pabrik Kuatji by</p>
