@@ -8,11 +8,12 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     filename: "main.js",
-    path: path.resolve(__dirname, "build"),
+    path: path.resolve(__dirname, "dist"),
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
+      favicon: path.join(__dirname, "public", "favicon.png")
     }),
   ],
   devServer: {
@@ -61,6 +62,6 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".*", ".js", ".jsx", ".ts", ".tsx"],
+    extensions: [".*", ".js", ".jsx", ".ts", ".tsx", ".html"],
   }
 };
