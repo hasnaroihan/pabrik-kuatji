@@ -2,16 +2,18 @@
 
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require('webpack');
 
 module.exports = {
   entry: "./src/index.js",
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "build"),
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "dist"),
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, "public", "index.html"),
+      favicon: path.join(__dirname, "public", "favicon.png")
     }),
   ],
   devServer: {
@@ -40,12 +42,26 @@ module.exports = {
         use: [
           {
             loader: 'file-loader',
+            options: {
+              esModule: false,
+            },
           },
         ],
-      }
+      },
+      {
+        test: /\.svg/,
+        use: {
+          loader: "svg-url-loader",
+          options: {
+            // make all svg images to work in IE
+            iesafe: true,
+          },
+        },
+    },
+
     ],
   },
   resolve: {
-    extensions: [".*", ".js", ".jsx", ".ts", ".tsx"],
+    extensions: [".*", ".js", ".jsx", ".ts", ".tsx", ".html"],
   }
 };
