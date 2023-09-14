@@ -69,22 +69,22 @@ export const ProjectDetails = ({project, setProject}: {project:string, setProjec
                                 })
                             }
                         </div>
-                        <div id="bundle-2" className="w-fit max-h-min grid grid-cols-3 justify-items-center items-start">
-                            {
-                                imageNames2.map((img) => {
-                                    return (
-                                        <img className="object-contain"
-                                        src={require("../../assets/exported/bundle-2/" + img + ".png")} />
-                                    )
-                                })
-                            }
-                        </div>
                         <div id="bundle-3" className="w-fit max-h-min">
                             {
                                 imageNames3.map((img) => {
                                     return (
                                         <img className="object-contain"
                                         src={require("../../assets/exported/bundle-3/" + img + ".png")} />
+                                    )
+                                })
+                            }
+                        </div>
+                        <div id="bundle-2" className="w-fit max-h-min grid grid-cols-3 justify-items-center items-start">
+                            {
+                                imageNames2.map((img) => {
+                                    return (
+                                        <img className="object-contain"
+                                        src={require("../../assets/exported/bundle-2/" + img + ".png")} />
                                     )
                                 })
                             }

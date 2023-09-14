@@ -17,7 +17,7 @@ export const Summary = ({active, isAboutMeShown, handleClickToggle}:
                     <AboutMeToggle isToggleShown={isAboutMeShown} handleClickToggle={handleClickToggle}/>
                 </div>  
             </div>
-            <img className={`absolute w-full -z-10 inset-x-0 transition-all duration-400 ${ active === 0 ? "-bottom-5 md:-bottom-[10vh]" : "bottom-0"}
+            <img className={`absolute w-full -z-10 inset-x-0 transition-all origin-bottom scale-150 md:scale-100 duration-400 ${ active === 0 ? "bottom-0 md:-bottom-[10vh]" : "bottom-0"}
             ${isAboutMeShown ? "opacity-40" : ""}`}
                 src={SunflowerHills}></img>
         </div>
