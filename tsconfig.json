@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {  
+        "jsx": "react-jsx",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "strict": true,
+        "target": "ES5",
+        "forceConsistentCasingInFileNames": true,
+    }
+  }
