@@ -9,10 +9,10 @@ export const Projects = ({handleClickIT, handleClickGallery}: {
 
     return (
         <div className="relative w-full h-full overflow-y-clip">
-            <div className="absolute w-full h-full -z-20 inset-x-0 top-0 bg-gradient-to-t from-red-200"></div>
-            <img className="absolute w-full -z-10 inset-x-0 bottom-0"
+            <div className="absolute w-full h-full -z-20 inset-x-0 top-0 bg-gradient-to-t to-25% md:to-100% from-red-200"></div>
+            <img className="absolute w-full -z-10 inset-x-0 bottom-20 md:bottom-0"
             src={Lowest}></img>
-            <div className="grid grid-cols-2 h-full w-full justify-items-center items-end">
+            <div className="grid grid-cols-2 h-full w-full justify-items-center items-end pb-20 md:pb-0">
                 <a href="#projectdetails" className="w-1/2 transition transform hover:scale-125" onClick={handleClickIT}>
                     <img className="block" src={IT}></img>
                 </a>

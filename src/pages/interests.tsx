@@ -50,10 +50,10 @@ export const Interests = () => {
     ]
     return (
         <div className="relative w-full h-full">
-            <img className="absolute w-full sm:w-3/4 inset-x-0 bottom-0"
+            <img className="absolute w-full sm:w-3/4 inset-x-0 bottom-10 md:bottom-0"
             src={HarvestDay}></img>
             <div className="flex justify-center md:justify-end items-start h-full p-3 md:pt-20 md:pr-20">
-                <div className="grid grid-cols-3 gap-4 h-2/3 w-full md:w-3/5 p-4 m-2 md:mt-10 md:mr-10 font-plusjakarta">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4 h-2/3 w-full md:w-3/5 p-4 m-2 md:mt-10 md:mr-10 font-plusjakarta">
                         {
                             skillCard.map((card, idx) =>{
                                 if (card.id) {
