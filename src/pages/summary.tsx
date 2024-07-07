@@ -1,25 +1,83 @@
-import { MouseEvent, MouseEventHandler, useState } from "react"
-import { AboutMeToggle } from "../components/aboutMeToggle"
-import SunflowerHills from "./../../assets/sunflower-hills-flatten.png"
-import { AboutMe } from "../components/aboutMe"
+import { MouseEvent, MouseEventHandler, useState } from "react";
+import { AboutMeToggle } from "../components/aboutMeToggle";
+import Mountains from "./../../assets/new/mountains.png";
+import HillsBack from "./../../assets/new/hills-back.png";
+import HillsMiddle from "./../../assets/new/hills-middle.png";
+import HillsFore from "./../../assets/new/hills-fore.png";
+import SunflowerMiddle from "./../../assets/new/sunflower-middle.png";
+import SunflowerFore from "./../../assets/new/sunflower-fore.png";
+import { AboutMe } from "../components/aboutMe";
 
-export const Summary = ({active, isAboutMeShown, handleClickToggle}: 
-    {active: number | undefined,
-    isAboutMeShown: boolean,
-    handleClickToggle: MouseEventHandler<HTMLButtonElement>}) => {
-    
-
+export const Summary = ({
+    active,
+    isAboutMeShown,
+    handleClickToggle,
+}: {
+    active: number | undefined;
+    isAboutMeShown: boolean;
+    handleClickToggle: MouseEventHandler<HTMLButtonElement>;
+}) => {
     return (
-        <div className="relative w-full h-full">
+        <div className='relative w-full h-full'>
             <div className={`overflow-hidden h-full`}>
-                <AboutMe isAboutMeShown={isAboutMeShown}/>
-                <div className="grid grid-cols-2 h-1/2 z-20 justify-items-start items-start">
-                    <AboutMeToggle isToggleShown={isAboutMeShown} handleClickToggle={handleClickToggle}/>
-                </div>  
+                <AboutMe isAboutMeShown={isAboutMeShown} />
+                <div className='grid grid-cols-2 h-1/2 justify-items-start items-start'>
+                    <AboutMeToggle
+                        isToggleShown={isAboutMeShown}
+                        handleClickToggle={handleClickToggle}
+                    />
+                </div>
             </div>
-            <img className={`absolute w-full -z-10 inset-x-0 transition-all origin-bottom scale-150 md:scale-100 duration-400 ${ active === 0 ? "bottom-0 md:-bottom-[10vh]" : "bottom-0"}
-            ${isAboutMeShown ? "opacity-40" : ""}`}
-                src={SunflowerHills}></img>
+            <div
+                className={`absolute inset-y-0 z-0 w-full h-full bg-bluesky transition-all origin-bottom duration-400 ${
+                    isAboutMeShown ? "opacity-40" : "opacity-0"
+                }`}
+            />
+            <img
+                className={`absolute w-full -z-20 inset-x-0 transition-all origin-bottom scale-150 md:scale-100 duration-400 opacity-85 ${
+                    active === 0
+                        ? "bottom-36 md:bottom-52 lg:bottom-[25vh] xl:bottom-[32vh]"
+                        : "bottom-0"
+                }`}
+                src={Mountains}
+            />
+            <img
+                className={`absolute w-full -z-20 inset-x-0 transition-all origin-bottom scale-150 md:scale-100 duration-400 ${
+                    active === 0
+                        ? "bottom-20 md:bottom-28 lg:bottom-[10vh]"
+                        : "bottom-0"
+                }`}
+                src={HillsBack}
+            />
+            <img
+                className={`absolute w-full -z-20 inset-x-0 transition-all origin-bottom scale-150 md:scale-100 duration-400 ${
+                    active === 0
+                        ? "bottom-14 md:bottom-20 lg:bottom-[5vh]"
+                        : "bottom-0"
+                }`}
+                src={HillsMiddle}
+            />
+            <img
+                className={`absolute w-full -z-20 inset-x-0 transition-all origin-bottom scale-150 md:scale-100 duration-400 ${
+                    active === 0
+                        ? "-bottom-[5vh] lg:-bottom-[10vh]"
+                        : "bottom-0"
+                }`}
+                src={HillsFore}
+            />
+            <img
+                className={`absolute w-3/4 -z-10 -left-8 md:-left-10 lg:-left-20 transition-all origin-bottom scale-150 md:scale-100 duration-400 ${
+                    active === 0 ? "-bottom-6 lg:-bottom-16" : "bottom-0"
+                }`}
+                src={SunflowerMiddle}
+            />
+            <img
+                className='absolute w-3/4 -z-10 inset-x-0 transition-all origin-bottom scale-150 md:scale-100 duration-400 bottom-0'
+                src={SunflowerFore}
+            />
         </div>
-    )
+    );
+};
+{
+    /*  */
 }
