@@ -4,18 +4,18 @@ import { SkillCard } from "./types";
 import { SkillBoxFlip } from "../components/skillBoxFlip";
 import { SkillBox } from "../components/skillBox";
 
-export const Interests = () => {
+export const Interests = ({ active }: { active: number | undefined }) => {
     const skillCard: SkillCard[] = [
         {
             id: "Software Engineering",
             desc: [
-                "HTML, CSS, JS - 7/10",
-                "ReactJS - 7/10",
-                "Python, Django - 8/10",
-                "Go - 6/10",
-                "Java - 6/10",
+                "Frontend Web Engineering",
+                "C# (Unity)",
+                "Python",
+                "Open to try and learn new things",
             ],
             position: "origin-top-left",
+            background: "bg-yellow-200",
         },
         {
             id: null,
@@ -23,21 +23,29 @@ export const Interests = () => {
                 "I read everything, but mystery books and encyclopedias have a special place in my bookshelf",
             ],
             position: "-top",
-        },
-        {
-            id: "Digital Art",
-            desc: ["Digital illustration", "Vector arts"],
-            position: "origin-top-right",
+            background: "bg-lime-600",
         },
         {
             id: null,
-            desc: ["I like designing interactive games"],
+            desc: ["I create games because I like it"],
             position: "-bottom-left",
+            background: "bg-lime-600",
+        },
+        {
+            id: "Digital Art",
+            desc: [
+                "Digital illustration",
+                "Vector arts",
+                "Adaptive to any drawing apps but mostly use Krita",
+            ],
+            position: "origin-top-right",
+            background: "bg-yellow-200",
         },
         {
             id: "Writing",
-            desc: ["Blog", "Poetry", "Short stories"],
+            desc: ["My apologies, my blog is still under construction!"],
             position: "origin-bottom",
+            background: "bg-yellow-200",
         },
         {
             id: null,
@@ -45,23 +53,38 @@ export const Interests = () => {
                 "Solving puzzles, I'm pretty confident in my minesweeper skill",
             ],
             position: "-bottom-right",
+            background: "bg-lime-600",
         },
     ];
     return (
         <div className='relative w-full h-full'>
             <img
-                className='absolute w-full sm:w-3/4 inset-x-0 bottom-10 md:bottom-0 p-10'
+                className={`absolute w-full sm:w-3/4 inset-x-0 p-10 transition-all duration-500 ${
+                    active === 1 ? "bottom-10 md:bottom-0" : "-bottom-12 -z-50"
+                }`}
                 src={HarvestDay}
             ></img>
             <div className='flex justify-center md:justify-end items-start h-full p-3 md:pt-20 md:pr-20'>
-                <div className='grid grid-cols-2 md:grid-cols-3 gap-4 h-2/3 w-full md:w-3/5 p-4 m-2 md:mt-10 md:mr-10 font-plusjakarta'>
-                    {skillCard.map((card, idx) => {
-                        if (card.id) {
-                            return <SkillBoxFlip skill={card} key={idx} />;
-                        } else {
-                            return <SkillBox skill={card} key={idx} />;
-                        }
-                    })}
+                <div className='flex flex-col md:flex-row gap-4 h-2/3 w-full md:w-3/5 p-4 m-2 md:mt-10 md:mr-10 font-plusjakarta'>
+                    <div className='grid grid-cols-2 grid-rows-3 grid-flow-col gap-4'>
+                        {skillCard.map((card, idx) => {
+                            if (idx <= 3) {
+                                if (card.id) {
+                                    return (
+                                        <SkillBoxFlip skill={card} key={idx} />
+                                    );
+                                } else {
+                                    return <SkillBox skill={card} key={idx} />;
+                                }
+                            }
+                        })}
+                    </div>
+                    <div className='grid grid-cols-3 lg:grid-cols-1 lg:grid-rows-3 gap-4'>
+                        <div className='row-span-1 lg:row-span-2 col-span-2 lg:col-span-1'>
+                            <SkillBoxFlip skill={skillCard[4]} key={4} />
+                        </div>
+                        <SkillBox skill={skillCard[5]} key={5} />
+                    </div>
                 </div>
             </div>
         </div>

@@ -24,18 +24,18 @@ export const AboutMeToggle = ({
                     Hasna Roihan
                 </p>
             </div>
-            <div className='font-medium font-opensans mx-3 md:mx-7 md:w-48'>
+            {/* <div className='font-medium font-opensans mx-3 md:mx-7 md:w-48'>
                 <p className='text-xs md:text-sm text-accent'>
-                    Fullstack developer, digital artist, and a writer
+                    Fullstack creator
                 </p>
-            </div>
+            </div> */}
             <button
                 className='flex bg-accent text-white text-xs w-full p-2 rounded-b-xl justify-center items-center mt-5'
                 onClick={handleClickToggle}
             >
-                <p className='justify-self-center font-opensans underline'>
+                {/* <p className='justify-self-center font-opensans underline'>
                     {isToggleShown ? "close" : "more about me >>"}
-                </p>
+                </p> */}
             </button>
         </div>
     );

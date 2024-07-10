@@ -164,7 +164,7 @@ export const Landing = () => {
                 ref={interestRef}
                 className='w-full h-screen snap-start'
             >
-                <Interests />
+                <Interests active={active} />
             </section>
             <section
                 id='projects'
