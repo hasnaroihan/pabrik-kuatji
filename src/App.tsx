@@ -3,10 +3,9 @@
 import { Navbar } from "./components/navbar";
 import { Landing } from "./pages/landing";
 
-const App = () =>
-    <div className="h-screen overflow-hidden">
+const App = () => (
+    <div className='h-screen overflow-hidden'>
         <Landing />
-    </div>   
-;
-
+    </div>
+);
 export default App;

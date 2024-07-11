@@ -1,5 +1,5 @@
 import { useState } from "react";
-import HarvestDay from "./../../assets/new/harvest-day.png";
+import HarvestDay from "../../assets/new/harvest-day.png";
 import { SkillCard } from "./types";
 import { SkillBoxFlip } from "../components/skillBoxFlip";
 import { SkillBox } from "../components/skillBox";

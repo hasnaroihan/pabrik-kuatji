@@ -5,3 +5,8 @@
 img {
     pointer-events: none;
 }
+
+html {
+    --scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important;
+}

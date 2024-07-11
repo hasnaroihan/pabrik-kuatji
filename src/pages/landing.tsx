@@ -6,6 +6,7 @@ import { Summary } from "./summary";
 import { Interests } from "./interests";
 import { Projects } from "./projects";
 import { ProjectDetails } from "./projectDetails";
+import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
 
 const nearestSection = (currentPosition: number, sectionArray: NavProp[]) => {
     if (sectionArray) {
@@ -140,13 +141,15 @@ export const Landing = () => {
 
     return (
         <div
+            id='base'
             className={`w-full h-screen ${
                 isAboutMeShown
                     ? "overflow-hidden"
-                    : "overflow-y-scroll overscroll-contain scroll-smooth snap-y snap-mandatory no-scrollbar"
+                    : "overflow-y-scroll overscroll-contain snap-y snap-mandatory no-scrollbar"
             }`}
             ref={scrollRef}
         >
+            <ScrollToHashElement behavior='smooth' />
             <Navbar navHeader={navHeader} active={active} />
             <section
                 id='summary'
