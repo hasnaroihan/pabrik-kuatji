@@ -6,6 +6,7 @@ import Dispenser from "./../../assets/new/water-dispenser.png";
 import Mading from "./../../assets/new/mading.png";
 import Door from "./../../assets/new/door.png";
 import Bookshelf from "./../../assets/new/bookshelf.png";
+import Sign from "./../../assets/new/direction.png";
 
 export const Projects = ({
     active,
@@ -23,6 +24,10 @@ export const Projects = ({
                     active === 2 ? "opacity-80" : "opacity-0"
                 }`}
                 src={BGMood}
+            />
+            <img
+                className='hidden xl:block absolute left-0 right-0 ml-auto mr-auto top-[0.2] 2xl:top-0 scale-[0.75] 2xl:scale-[0.7]'
+                src={Sign}
             />
             <div className='grid grid-rows-2 xl:grid-rows-1 xl:grid-cols-2 h-full w-full justify-items-center items-end gap-4 xl:gap-0 p-4 xl:p-0'>
                 <div className='relative w-full h-full overflow-clip xl:overflow-visible rounded-lg'>
