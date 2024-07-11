@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import Logo from "./../../assets/web-logo.svg";
 import Kulky from "./../../assets/kulky.png";
-import { ITProjectDesc } from "./types";
-import { ITProjectCard } from "../components/itProjectCard";
+import { ITProjectDesc } from "../pages/types";
+import { ITProjectCard } from "./itProjectCard";
 const test = require;
 
 export const ProjectDetails = ({
@@ -25,7 +25,7 @@ export const ProjectDetails = ({
             src: Kulky,
             title: "Grocery Planner",
             link: "https://github.com/hasnaroihan/grocery-planner",
-            desc: "Digital cookbook with grocery-list-generating utility",
+            desc: "Digital cookbook that will generate your grocery list",
             stack: ["Go"],
             status: "ongoing",
         },

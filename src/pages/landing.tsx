@@ -5,7 +5,7 @@ import { Background } from "../components/background";
 import { Summary } from "./summary";
 import { Interests } from "./interests";
 import { Projects } from "./projects";
-import { ProjectDetails } from "./projectDetails";
+import { ProjectDetails } from "../components/projectDetails";
 import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
 
 const nearestSection = (currentPosition: number, sectionArray: NavProp[]) => {
@@ -72,26 +72,26 @@ export const Landing = () => {
     const summaryRef = useRef<HTMLInputElement>(null);
     const interestRef = useRef<HTMLInputElement>(null);
     const projectRef = useRef<HTMLInputElement>(null);
-    const projectDetailsRef = useRef<HTMLInputElement>(null);
-    // const contactRef = useRef<HTMLInputElement>(null)
+    // const projectDetailsRef = useRef<HTMLInputElement>(null);
+    const contactRef = useRef<HTMLInputElement>(null);
 
     const [active, setActive] = useState<number | undefined>(0);
     const [scrollDown, setScrollDown] = useState(0);
     const [isAboutMeShown, setAboutMeShown] = useState(false);
-    const [projectToggle, setProjectToggle] = useState("it");
+    // const [projectToggle, setProjectToggle] = useState("it");
 
     const handleClickToggle = (event: MouseEvent<HTMLButtonElement>): void => {
         event.preventDefault();
         setAboutMeShown(!isAboutMeShown);
     };
-    const handleClickIT = (event: MouseEvent<HTMLAnchorElement>): void => {
-        // event.preventDefault()
-        setProjectToggle("it");
-    };
-    const handleClickGallery = (event: MouseEvent<HTMLAnchorElement>): void => {
-        // event.preventDefault()
-        setProjectToggle("gallery");
-    };
+    // const handleClickIT = (event: MouseEvent<HTMLAnchorElement>): void => {
+    //     // event.preventDefault()
+    //     setProjectToggle("it");
+    // };
+    // const handleClickGallery = (event: MouseEvent<HTMLAnchorElement>): void => {
+    //     // event.preventDefault()
+    //     setProjectToggle("gallery");
+    // };
 
     const navHeader: NavProp[] = [
         {
@@ -109,16 +109,16 @@ export const Landing = () => {
             ref: projectRef,
             id: "projects",
         },
-        {
-            title: "Project Details",
-            ref: projectDetailsRef,
-            id: "projectdetails",
-        },
         // {
-        //     title: "Contact",
-        //     ref: contactRef,
-        //     id: "contact"
-        // }
+        //     title: "Project Details",
+        //     ref: projectDetailsRef,
+        //     id: "projectdetails",
+        // },
+        {
+            title: "Contact",
+            ref: contactRef,
+            id: "contact",
+        },
     ];
 
     useEffect(() => {
@@ -176,11 +176,11 @@ export const Landing = () => {
             >
                 <Projects
                     active={active}
-                    handleClickIT={handleClickIT}
-                    handleClickGallery={handleClickGallery}
+                    // handleClickIT={handleClickIT}
+                    // handleClickGallery={handleClickGallery}
                 />
             </section>
-            <section
+            {/* <section
                 id='projectdetails'
                 ref={projectDetailsRef}
                 className='w-full h-screen snap-start'
@@ -189,10 +189,14 @@ export const Landing = () => {
                     project={projectToggle}
                     setProject={setProjectToggle}
                 />
-            </section>
-            {/* <section id="contact" ref={contactRef} className="w-full h-screen snap-start">
-                contact me
             </section> */}
+            <section
+                id='contact'
+                ref={contactRef}
+                className='w-full h-screen snap-start'
+            >
+                contact me
+            </section>
             <Background active={active} scrollDown={scrollDown} />
         </div>
     );

@@ -9,12 +9,12 @@ import Bookshelf from "./../../assets/new/bookshelf.png";
 
 export const Projects = ({
     active,
-    handleClickIT,
-    handleClickGallery,
-}: {
+}: // handleClickIT,
+// handleClickGallery,
+{
     active: number | undefined;
-    handleClickIT: MouseEventHandler<HTMLAnchorElement>;
-    handleClickGallery: MouseEventHandler<HTMLAnchorElement>;
+    // handleClickIT: MouseEventHandler<HTMLAnchorElement>;
+    // handleClickGallery: MouseEventHandler<HTMLAnchorElement>;
 }) => {
     return (
         <div className='relative w-auto h-full overflow-y-clip'>
@@ -45,11 +45,11 @@ export const Projects = ({
                         src={Mading}
                     />
                     <a
-                        href='#projectdetails'
+                        href='/projectdetails'
                         className='absolute bottom-0 left-[18vw] xl:left-[7vw] 2xl:left-[9vw] 
                         h-3/5 xl:h-2/5 2xl:h-1/2 
                         transition transform hover:scale-125'
-                        onClick={handleClickIT}
+                        // onClick={handleClickIT}
                     >
                         <img className='h-full' src={IT} />
                     </a>
@@ -76,8 +76,8 @@ export const Projects = ({
                         right-[20vw] xl:left-[21vw] 2xl:left-[15vw]
                         h-3/4 xl:h-1/2 2xl:h-3/5 min-w-max
                          transition transform hover:scale-125'
-                        onClick={handleClickGallery}
-                        href='#projectdetails'
+                        // onClick={handleClickGallery}
+                        href='/gallery'
                     >
                         <img className='h-full' src={Drawing} />
                     </a>

@@ -19,15 +19,13 @@ export const Interests = ({ active }: { active: number | undefined }) => {
         },
         {
             id: null,
-            desc: [
-                "I read everything, but mystery books and encyclopedias have a special place in my bookshelf",
-            ],
+            desc: ["I read everything"],
             position: "-top",
             background: "bg-lime-600",
         },
         {
             id: null,
-            desc: ["I create games because I like it"],
+            desc: ["I enjoy creating games"],
             position: "-bottom-left",
             background: "bg-lime-600",
         },
@@ -49,9 +47,7 @@ export const Interests = ({ active }: { active: number | undefined }) => {
         },
         {
             id: null,
-            desc: [
-                "Solving puzzles, I'm pretty confident in my minesweeper skill",
-            ],
+            desc: ["Solving puzzles, especially minesweeper"],
             position: "-bottom-right",
             background: "bg-lime-600",
         },
@@ -59,14 +55,14 @@ export const Interests = ({ active }: { active: number | undefined }) => {
     return (
         <div className='relative w-full h-full'>
             <img
-                className={`absolute w-full sm:w-3/4 inset-x-0 p-10 transition-all duration-500 ${
+                className={`absolute w-full sm:w-3/4 xl:w-2/3 inset-x-0 p-10 transition-all duration-500 ${
                     active === 1 ? "bottom-10 md:bottom-0" : "-bottom-12 -z-50"
                 }`}
                 src={HarvestDay}
             ></img>
-            <div className='flex justify-center md:justify-end items-start h-full p-3 md:pt-20 md:pr-20'>
-                <div className='flex flex-col md:flex-row gap-4 h-2/3 w-full md:w-3/5 p-4 m-2 md:mt-10 md:mr-10 font-plusjakarta'>
-                    <div className='grid grid-cols-2 grid-rows-3 grid-flow-col gap-4'>
+            <div className='flex justify-center lg:justify-end items-start h-full p-3 lg:pt-20 lg:pr-20'>
+                <div className='flex flex-col lgtab:flex-col lg:flex-row gap-4 h-2/3 w-full lg:w-3/5 p-4 m-2 lg:mt-10 lg:mr-10 font-plusjakarta'>
+                    <div className='grow grid grid-cols-2 grid-rows-3 grid-flow-col gap-4'>
                         {skillCard.map((card, idx) => {
                             if (idx <= 3) {
                                 if (card.id) {

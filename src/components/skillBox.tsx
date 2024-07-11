@@ -4,7 +4,7 @@ export const SkillBox = ({ skill }: { skill: SkillCard }) => {
     return (
         <div
             className={`rounded-2xl drop-shadow-xl
-        flex justify-center items-center
+        flex justify-center items-center max-h-min
         text-xs md:text-sm lg:text-base text-center text-white p-5 ${skill.background}`}
         >
             {skill.desc[0]}

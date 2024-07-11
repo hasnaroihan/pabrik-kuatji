@@ -36,7 +36,7 @@ export const Summary = ({
             <img
                 className={`absolute w-full -z-20 inset-x-0 transition-all origin-bottom scale-150 md:scale-100 duration-500 opacity-85 ${
                     active === 0
-                        ? "bottom-36 md:bottom-52 lg:bottom-[25vh] xl:bottom-[32vh]"
+                        ? "bottom-36 md:bottom-52 lgtab:bottom-[20vh] lg:bottom-[25vh] xl:bottom-[32vh]"
                         : "bottom-0"
                 }`}
                 src={Mountains}
