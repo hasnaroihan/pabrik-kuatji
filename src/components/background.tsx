@@ -45,7 +45,7 @@ export const Background = ({
 
     return (
         <div
-            className={`w-full h-screen fixed inset-0 -z-50 transition-all duration-500 ${color}`}
+            className={`w-full h-dvh fixed inset-0 -z-50 transition-all duration-500 ${color}`}
         >
             <div className='absolute inset-y-0 h-full w-full'>
                 <div className='relative h-1/4 md:h-1/2'>

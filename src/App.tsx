@@ -20,6 +20,6 @@ const App = () => {
         }
     };
 
-    return <div className='h-screen overflow-hidden'>{Route()}</div>;
+    return <div className='h-dvh overflow-hidden'>{Route()}</div>;
 };
 export default App;

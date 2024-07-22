@@ -1,6 +1,6 @@
 export const ContactMe = () => {
     return (
-        <div className='w-full h-screen flex flex-col justify-center items-center gap-10'>
+        <div className='w-full h-dvh flex flex-col justify-center items-center gap-10'>
             <p className='font-patrick font-black text-lime-700 text-6xl'>
                 Get in touch
             </p>

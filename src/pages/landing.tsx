@@ -142,7 +142,7 @@ export const Landing = () => {
     return (
         <div
             id='base'
-            className={`w-full h-screen ${
+            className={`w-full h-dvh ${
                 isAboutMeShown
                     ? "overflow-hidden"
                     : "overflow-y-scroll overscroll-contain snap-y snap-mandatory no-scrollbar"
@@ -154,7 +154,7 @@ export const Landing = () => {
             <section
                 id='summary'
                 ref={summaryRef}
-                className='relative w-full h-screen snap-start overflow-x-clip'
+                className='relative w-full h-dvh snap-start overflow-x-clip'
             >
                 <Summary
                     active={active}
@@ -165,14 +165,14 @@ export const Landing = () => {
             <section
                 id='interests'
                 ref={interestRef}
-                className='w-full h-screen snap-start'
+                className='w-full h-dvh snap-start'
             >
                 <Interests active={active} />
             </section>
             <section
                 id='projects'
                 ref={projectRef}
-                className='w-full h-screen snap-start'
+                className='w-full h-dvh snap-start'
             >
                 <Projects
                     active={active}
@@ -183,7 +183,7 @@ export const Landing = () => {
             {/* <section
                 id='projectdetails'
                 ref={projectDetailsRef}
-                className='w-full h-screen snap-start'
+                className='w-full h-dvh snap-start'
             >
                 <ProjectDetails
                     project={projectToggle}
@@ -193,7 +193,7 @@ export const Landing = () => {
             <section
                 id='contact'
                 ref={contactRef}
-                className='w-full h-screen snap-start'
+                className='w-full h-dvh snap-start'
             >
                 <ContactMe />
             </section>

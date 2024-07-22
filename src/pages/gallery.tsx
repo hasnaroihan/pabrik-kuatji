@@ -2,7 +2,7 @@ export const Gallery = () => {
     const imageNames1 = ["1.png", "2.png", "3.jpg", "4.png", "5.jpg", "6.png"];
 
     return (
-        <div className='relative w-screen h-screen'>
+        <div className='relative w-screen h-dvh'>
             <a
                 className='absolute z-20 w-20 lg:w-40 h-10
                 bg-red-400 rounded-r-xl

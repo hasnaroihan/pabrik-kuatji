@@ -16,7 +16,7 @@ export const Navbar = ({
         window.history.replaceState(null, "", `#${e.target.name}`);
     };
     return (
-        <div className='h-screen fixed inset-y-0 right-3 md:right-10 z-50 text-white flex flex-col pt-10 gap-10 md:gap-5 transform origin-top scale-50 md:transform-none'>
+        <div className='h-dvh fixed inset-y-0 right-3 md:right-10 z-50 text-white flex flex-col pt-10 gap-10 md:gap-5 transform origin-top scale-50 md:transform-none'>
             {navHeader.map((settings: NavProp, idx: number) => (
                 <button
                     className={`w-5 h-5 rounded-full ${

@@ -38,7 +38,7 @@ export const ITProjects = () => {
     return (
         <div className='w-full h-full overflow-y-scroll no-scrollbar'>
             <div
-                className='w-screen lg:w-auto lg:h-screen
+                className='w-screen lg:w-auto lg:h-dvh
             p-5 md:p-10
             flex flex-col lg:flex-row justify-center items-center gap-5 lg:gap-10
             bg-red-200 drop-shadow-md z-10'
