@@ -33,6 +33,16 @@ module.exports = {
                     raw: "((max-width: 1024px) and (min-height: 1088px))",
                 },
             },
+            keyframes: {
+                scrollx: {
+                    "0%": { transform: "translateX(0%)" },
+                    "100%": { transform: "translateX(-100%)" },
+                },
+                scrollxDelay: {
+                    "0%": { transform: "translateX(100%)" },
+                    "100%": { transform: "translateX(0%)" },
+                },
+            },
         },
     },
     plugins: [

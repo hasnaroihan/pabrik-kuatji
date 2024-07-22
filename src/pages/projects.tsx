@@ -7,6 +7,8 @@ import Mading from "./../../assets/new/mading.png";
 import Door from "./../../assets/new/door.png";
 import Bookshelf from "./../../assets/new/bookshelf.png";
 import Sign from "./../../assets/new/direction.png";
+import ProjectsSign from "./../../assets/new/projects.png";
+import GallerySign from "./../../assets/new/gallery.png";
 
 export const Projects = ({
     active,
@@ -39,6 +41,11 @@ export const Projects = ({
                         src={BGMood}
                     />
                     <img
+                        className='absolute xl:hidden w-3/5 top-10 left-8'
+                        src={ProjectsSign}
+                    />
+
+                    <img
                         className='absolute bottom-0 left-0 
                         h-3/5 xl:h-2/5 2xl:h-1/2 min-w-max'
                         src={Dispenser}
@@ -67,6 +74,10 @@ export const Projects = ({
                         src={BGMood}
                     />
                     <img
+                        className='absolute xl:hidden w-3/5 top-10 left-8'
+                        src={GallerySign}
+                    />
+                    <img
                         className='absolute bottom-0 -right-10 xl:right-0 
                         h-full xl:h-2/3 2xl:h-4/5'
                         src={Door}
@@ -78,7 +89,7 @@ export const Projects = ({
                     />
                     <a
                         className='absolute bottom-0  
-                        right-[20vw] xl:left-[21vw] 2xl:left-[15vw]
+                        right-[20vw] left-[20vw] xl:left-[21vw] 2xl:left-[15vw]
                         h-3/4 xl:h-1/2 2xl:h-3/5 min-w-max
                          transition transform hover:scale-125'
                         // onClick={handleClickGallery}

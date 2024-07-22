@@ -21,4 +21,5 @@ export type ITProjectDesc = {
     desc: string;
     stack: string[];
     status: string;
+    repo: string;
 };

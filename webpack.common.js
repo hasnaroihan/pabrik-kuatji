@@ -1,5 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const { optimize } = require("webpack");
 
 module.exports = {
     entry: {
@@ -40,6 +42,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpe?g|gif)$/i,
+                type: "asset",
                 use: [
                     {
                         loader: "file-loader",
@@ -60,6 +63,26 @@ module.exports = {
                 },
             },
         ],
+    },
+    optimization: {
+        minimizer: {
+            implementation: ImageMinimizerPlugin.sharpMinify,
+            options: {
+                encodeOptions: {
+                    jpeg: {
+                        quality: 100,
+                    },
+                    webp: {
+                        lossless: true,
+                    },
+                    avif: {
+                        lossless: true,
+                    },
+                    png: {},
+                    gif: {},
+                },
+            },
+        },
     },
     resolve: {
         extensions: [".*", ".js", ".jsx", ".ts", ".tsx"],

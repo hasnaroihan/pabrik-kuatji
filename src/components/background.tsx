@@ -22,9 +22,9 @@ export const Background = ({
         } else if (active === 2) {
             setColor("bg-amber-50");
         } else if (active === 3) {
-            setColor("bg-white");
+            setColor("bg-amber-200");
         } else {
-            setColor("bg-white");
+            setColor("bg-amber-200");
         }
     }, [active]);
 

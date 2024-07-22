@@ -5,8 +5,8 @@ import { Background } from "../components/background";
 import { Summary } from "./summary";
 import { Interests } from "./interests";
 import { Projects } from "./projects";
-import { ProjectDetails } from "../components/projectDetails";
 import ScrollToHashElement from "@cascadia-code/scroll-to-hash-element";
+import { ContactMe } from "./contactMe";
 
 const nearestSection = (currentPosition: number, sectionArray: NavProp[]) => {
     if (sectionArray) {
@@ -195,7 +195,7 @@ export const Landing = () => {
                 ref={contactRef}
                 className='w-full h-screen snap-start'
             >
-                contact me
+                <ContactMe />
             </section>
             <Background active={active} scrollDown={scrollDown} />
         </div>

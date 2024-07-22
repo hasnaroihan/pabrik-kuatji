@@ -37,6 +37,14 @@ export const AboutMeToggle = ({
                 className='flex bg-accent text-white text-xs w-full p-2 rounded-b-xl justify-center items-center mt-5'
                 onClick={handleClickToggle}
             >
+                <span className='relative flex h-3 w-3 m-2'>
+                    <span
+                        className={`${
+                            isToggleShown ? "" : "animate-ping"
+                        } absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75`}
+                    ></span>
+                    <span className='relative inline-flex rounded-full h-3 w-3 bg-yellow-500'></span>
+                </span>
                 <p className='justify-self-center font-opensans underline'>
                     {isToggleShown ? "close mailbox" : "you got 1 mail >>"}
                 </p>

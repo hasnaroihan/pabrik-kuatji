@@ -1,55 +1,47 @@
 export const Gallery = () => {
-    const imageNames1 = ["1", "2", "3"];
-
-    const imageNames2 = ["2", "3", "1"];
-
-    const imageNames3 = ["1"];
+    const imageNames1 = ["1.png", "2.png", "3.jpg", "4.png", "5.jpg", "6.png"];
 
     return (
-        <div className='w-full h-screen'>
-            <div className='h-3/4 bg-white shadow-md z-10 p-5 overflow-y-scroll overscroll-auto'>
-                <div
-                    id='bundle-1'
-                    className='w-fit h-auto grid grid-cols-3 justify-items-center items-center'
-                >
-                    {imageNames1.map((img) => {
-                        return (
-                            <img
-                                className='object-contain'
-                                src={require("../../assets/exported/bundle-1/" +
-                                    img +
-                                    ".jpg")}
-                            />
-                        );
-                    })}
-                </div>
-                <div id='bundle-3' className='w-fit max-h-min'>
-                    {imageNames3.map((img) => {
-                        return (
-                            <img
-                                className='object-contain'
-                                src={require("../../assets/exported/bundle-3/" +
-                                    img +
-                                    ".png")}
-                            />
-                        );
-                    })}
-                </div>
-                <div
-                    id='bundle-2'
-                    className='w-fit max-h-min grid grid-cols-3 justify-items-center items-start'
-                >
-                    {imageNames2.map((img) => {
-                        return (
-                            <img
-                                className='object-contain'
-                                src={require("../../assets/exported/bundle-2/" +
-                                    img +
-                                    ".png")}
-                            />
-                        );
-                    })}
-                </div>
+        <div className='relative w-screen h-screen'>
+            <a
+                className='absolute z-20 w-20 lg:w-40 h-10
+                bg-red-400 rounded-r-xl
+                bottom-10 left-0
+                flex flex-col justify-center items-center
+                font-plusjakarta shadow-lg font-bold text-white hover:text-red-100'
+                href='/#projects'
+            >
+                Back
+            </a>
+            <div
+                className='w-max absolute top-0 bottom-0 my-auto h-2/5
+            flex flex-row gap-5
+            animate-[scrollx_30s_linear_infinite]'
+            >
+                {imageNames1.map((img) => {
+                    return (
+                        <img
+                            className='object-contain h-full w-auto'
+                            src={require("../../assets/exported/bundle-1/" +
+                                img)}
+                        />
+                    );
+                })}
+            </div>
+            <div
+                className='w-max absolute top-0 bottom-0 my-auto h-2/5
+            flex flex-row gap-5
+            animate-[scrollxDelay_30s_linear_infinite]'
+            >
+                {imageNames1.map((img) => {
+                    return (
+                        <img
+                            className='object-contain h-full w-auto'
+                            src={require("../../assets/exported/bundle-1/" +
+                                img)}
+                        />
+                    );
+                })}
             </div>
         </div>
     );

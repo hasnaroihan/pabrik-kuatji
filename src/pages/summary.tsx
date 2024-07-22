@@ -29,7 +29,7 @@ export const Summary = ({
                 </div>
             </div>
             <div
-                className={`absolute inset-y-0 z-0 w-full h-full bg-bluesky transition-all origin-bottom duration-300 ${
+                className={`absolute inset-y-0 z-0 w-full h-full bg-slate-500 transition-all origin-bottom duration-300 ${
                     isAboutMeShown ? "opacity-40" : "opacity-0"
                 }`}
             />
